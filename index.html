@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>بن مزاج | Bun Mazaj</title>
+  <meta name="theme-color" content="#cf0304">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated Step & Repeat Tiled Background (90% opacity) -->
+  <div class="bg-pattern" aria-hidden="true"></div>
+
+  <!-- Celebration Particles Canvas (Pink, Purple, Reds - rotating squares in arcs) -->
+  <canvas id="rainCanvas" aria-hidden="true"></canvas>
+
+  <!-- Full-Height App Container -->
+  <div class="page-container">
+    
+    <!-- Top Content Block -->
+    <div class="content-box top-box">
+      <!-- Logo -->
+      <header class="logo-wrapper">
+        <img src="assets/logo.webp" alt="شعار بن مزاج" class="logo-img" width="110" height="110">
+      </header>
+
+      <!-- Random Line from lines.md (Interactive on tap) -->
+      <section class="quote-section" aria-label="عبارة اليوم">
+        <div class="quote-card" id="quoteCard" role="button" tabindex="0">
+          <span class="quote-icon" aria-hidden="true">“</span>
+          <p class="quote-text" id="quoteText">...</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Continuous Moving Items Strip (Centered full-bleed, strictly 1.2x Background Speed) -->
+    <section class="items-ticker-section" aria-label="منتجات بن مزاج">
+      <div class="ticker-wrapper" id="tickerWrapper">
+        <div class="ticker-track" id="tickerTrack">
+          <!-- Set 1 -->
+          <div class="ticker-set" id="tickerSet1">
+            <img src="assets/items/item_01_IMG_1178.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_02_IMG_1179.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_03_IMG_1187.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_04_IMG_1188.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_05_IMG_1189.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_06_IMG_1191.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_07_IMG_1193.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_08_IMG_1194.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_09_IMG_1195.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_10_IMG_1197.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_11_IMG_1208.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_12_IMG_1210.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_13_IMG_1211_1.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_14_IMG_1211.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_15_photo_5382052986848222997_w.webp" alt="بن مزاج" class="ticker-item" loading="eager" width="112" height="112">
+          </div>
+          <!-- Set 2 -->
+          <div class="ticker-set" id="tickerSet2" aria-hidden="true">
+            <img src="assets/items/item_01_IMG_1178.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_02_IMG_1179.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_03_IMG_1187.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_04_IMG_1188.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_05_IMG_1189.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_06_IMG_1191.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_07_IMG_1193.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_08_IMG_1194.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_09_IMG_1195.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_10_IMG_1197.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_11_IMG_1208.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_12_IMG_1210.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_13_IMG_1211_1.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_14_IMG_1211.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_15_photo_5382052986848222997_w.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+          </div>
+          <!-- Set 3 -->
+          <div class="ticker-set" id="tickerSet3" aria-hidden="true">
+            <img src="assets/items/item_01_IMG_1178.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_02_IMG_1179.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_03_IMG_1187.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_04_IMG_1188.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_05_IMG_1189.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_06_IMG_1191.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_07_IMG_1193.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_08_IMG_1194.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_09_IMG_1195.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_10_IMG_1197.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_11_IMG_1208.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_12_IMG_1210.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_13_IMG_1211_1.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_14_IMG_1211.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_15_photo_5382052986848222997_w.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+          </div>
+          <!-- Set 4 -->
+          <div class="ticker-set" id="tickerSet4" aria-hidden="true">
+            <img src="assets/items/item_01_IMG_1178.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_02_IMG_1179.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_03_IMG_1187.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_04_IMG_1188.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_05_IMG_1189.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_06_IMG_1191.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_07_IMG_1193.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_08_IMG_1194.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_09_IMG_1195.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_10_IMG_1197.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_11_IMG_1208.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_12_IMG_1210.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_13_IMG_1211_1.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_14_IMG_1211.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+            <img src="assets/items/item_15_photo_5382052986848222997_w.webp" alt="" class="ticker-item" loading="eager" width="112" height="112">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Content Block -->
+    <div class="content-box bottom-box">
+      <!-- Contact & Action Links -->
+      <nav class="links-section" aria-label="روابط التواصل والموقع">
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/bunmazaj/" target="_blank" rel="noopener noreferrer" class="action-btn insta-btn" aria-label="حساب بن مزاج على انستغرام">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span class="btn-text">bunmazaj@</span>
+        </a>
+
+        <!-- Phone Number -->
+        <a href="tel:07745849939" class="action-btn phone-btn" aria-label="اتصال على الرقم 0774 584 9939">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span class="btn-text" dir="ltr">0774 584 9939</span>
+        </a>
+
+        <!-- Location Link -->
+        <a href="https://maps.app.goo.gl/QNFCtTRtpC9MCf546" target="_blank" rel="noopener noreferrer" class="action-btn map-btn" aria-label="موقع بن مزاج على الخريطة">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span class="btn-text">موقعنا على الخريطة</span>
+        </a>
+      </nav>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
